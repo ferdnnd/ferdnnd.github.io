@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <title>Tabel of FZL</title>
+</head>
+<body>
+    <header>
+        <div class="container header">
+            <div class="logo">
+                <img src="img/logo.png" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a><hr></li>
+                    <li><a href="formulir.html">Formulir</a><hr></li>
+                    <li><a href="tabel.html">Tabel</a><hr></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="container">
+            <h1 class="sub_judul">Daftar Mahasiswa</h1>
+        <div class="form mahasiswa">
+            <table class="daftar_mahasiswa" style="overflow-x:scroll" id="tabel">
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Program Studi</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                </tr>
+                <tr>
+                    <td>Akbar setiadi</td>
+                    <td>11156117181</td>
+                    <td>Manajemen Informatika</td>
+                    <td>akbar@x.com</td>
+                    <td>********</td>
+                    <td>Laki-laki</td>
+                    <td>2000-04-17</td>
+                    <td>Jl. x No. 1</td>
+                </tr>
+                <tr>
+                    <td>Ken Siregar</td>
+                    <td>263980293</td>
+                    <td>Teknik Pertambangan</td>
+                    <td>ken@x.com</td>
+                    <td>********</td>
+                    <td>Perempuan</td>
+                    <td>1996-11-21</td>
+                    <td>Jl. x No. 6</td>
+                </tr>
+                <tr>
+                    <td>adolf hire</td>
+                    <td>45386677</td>
+                    <td>Kesenian</td>
+                    <td>adolf@x.com</td>
+                    <td>********</td>
+                    <td>Laki-Laki</td>
+                    <td>1995-01-01</td>
+                    <td>Jl. x No. 7</td>
+                </tr>
+                <tr>
+                    <td>tobey maguire</td>
+                    <td>654283467</td>
+                    <td>Teknik Kimia</td>
+                    <td>tobey@x.com</td>
+                    <td>********</td>
+                    <td>Laki-laki</td>
+                    <td>1997-07-07</td>
+                    <td>Jl. x No. 9</td>
+                </tr>
+                <tr>
+                    <td>Lumi Chan</td>
+                    <td>26128638</td>
+                    <td>PGSD</td>
+                    <td>lumi@x.com</td>
+                    <td>********</td>
+                    <td>Perempuan</td>
+                    <td>2004-04-29</td>
+                    <td>Jl. x No. 11</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="container">
+        <div class="footer">
+            <div class="logo_fot">
+                <img src="img/logo.png" alt="Logo_fot">
+            </div>
+            <div class="copy_right">
+                <p>&copy; Copyright FZL</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Ambil parameter GET dari URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const nama = urlParams.get('nama');
+        const nim = urlParams.get('nim');
+        const prodi = urlParams.get('prodi');
+        const email = urlParams.get('email');
+        const password = urlParams.get('password');
+        const jenis_kelamin = urlParams.get('jenis_kelamin');
+        const tanggal_lahir = urlParams.get('tanggal_lahir');
+        const alamat = urlParams.get('alamat');
+        console.log(nama, nim, prodi, email, password, jenis_kelamin, tanggal_lahir, alamat);
+        // Tambahkan data ke dalam tabel
+        if( nama !== null &&  nim !== null &&  prodi !== null &&  email !== null &&  password !== null &&  jenis_kelamin !== null &&  tanggal_lahir !== null &&  alamat !== null){
+            const table = document.getElementById("tabel");
+            const row = table.insertRow(1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            const cell4 = row.insertCell(3);
+            const cell5 = row.insertCell(4);
+            const cell6 = row.insertCell(5);
+            const cell7 = row.insertCell(6);
+            const cell8 = row.insertCell(7);
+            
+            cell1.innerHTML = nama;
+            cell2.innerHTML = nim;
+            cell3.innerHTML = prodi;
+            cell4.innerHTML = email;
+            cell5.innerHTML = password;
+            cell6.innerHTML = jenis_kelamin;
+            cell7.innerHTML = tanggal_lahir;
+            cell8.innerHTML = alamat;
+        }
+    </script>
+</body>
+</html>
